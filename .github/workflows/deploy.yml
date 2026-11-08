@@ -37,7 +37,7 @@ jobs:
           # ⚠️ 关键细节：SOURCE 末尾必须有斜杠 "/"
           # 这表示：把 .output 目录【里面的所有内容】同步过去
           # 而不是把 .output 这个文件夹本身同步过去（避免变成 /opt/my-nuxt-app/.output/）
-          SOURCE: "www/.output/" 
+          SOURCE: "./" 
           
           # 👇 这里直接写死你的 VPS 目标绝对路径（请根据你的实际情况修改）
           TARGET: "/opt/mirai/"
