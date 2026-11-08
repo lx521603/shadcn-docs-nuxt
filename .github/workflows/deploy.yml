@@ -37,7 +37,7 @@ jobs:
           # ⚠️ 关键细节：SOURCE 末尾必须有斜杠 "/"
           # 这表示：把 .output 目录【里面的所有内容】同步过去
           # 而不是把 .output 这个文件夹本身同步过去（避免变成 /opt/my-nuxt-app/.output/）
-          SOURCE: ".output/" 
+          SOURCE: "www/.output/" 
           
           # 👇 这里直接写死你的 VPS 目标绝对路径（请根据你的实际情况修改）
           TARGET: "/opt/mirai/"
@@ -56,7 +56,7 @@ jobs:
           script: |
             # 切换到目标目录
             cd /opt/mirai/
-            
+            pm2 delete mirai-app || true
             echo "=== 优雅重启 Nuxt 服务 ==="
             # 逻辑：如果进程 'mirai-app' 存在则重启，如果是第一次部署不存在，则直接启动它
             pm2 restart mirai-app --update-env || PORT=3004 pm2 start server/index.mjs --name "mirai-app"
