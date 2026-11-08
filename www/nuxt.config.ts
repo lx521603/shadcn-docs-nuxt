@@ -2,6 +2,9 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   extends: ['..'],
+  site: {
+    url: 'https://example.com',
+  },
   i18n: {
     defaultLocale: 'zhcn',
     locales: [

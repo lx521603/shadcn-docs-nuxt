@@ -26,6 +26,10 @@ jobs:
 
       - name: Build nuxt project
         run: pnpm build
+      
+      # 🌟 核心步骤：在 VPS 上平滑重启 PM2 服务
+      - name: Generate static site
+        run: pnpm generate
 
       - name: Deploy .output to VPS (rsync)
         uses: easingthemes/ssh-deploy@main
@@ -34,19 +38,13 @@ jobs:
           REMOTE_HOST: ${{ secrets.VPS_HOST }}
           REMOTE_USER: ${{ secrets.VPS_USER }}
           
-          # ⚠️ 关键细节：SOURCE 末尾必须有斜杠 "/"
-          # 这表示：把 .output 目录【里面的所有内容】同步过去
-          # 而不是把 .output 这个文件夹本身同步过去（避免变成 /opt/my-nuxt-app/.output/）
-          SOURCE: "./" 
-          
-          # 👇 这里直接写死你的 VPS 目标绝对路径（请根据你的实际情况修改）
-          TARGET: "/opt/mirai/"
+          SOURCE: ".output/public/"
+          TARGET: "/opt/mirai/public/"
           
           # -avz: 归档、显示过程、压缩传输
           # --delete: 极其重要！删除 VPS 上存在但新构建产物中不存在的旧文件，保持绝对干净
           ARGS: "-avz --delete"
 
-      # 🌟 核心步骤：在 VPS 上平滑重启 PM2 服务
       - name: Restart PM2 service on VPS
         uses: appleboy/ssh-action@v1.0.3
         with:
