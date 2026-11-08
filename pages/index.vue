@@ -1,6 +1,6 @@
 <template>
   <div
-    class="px-4 py-6 md:px-8"
+    class="px-0 py-2 md:px-8"
     :class="[config.main.padded && 'container']"
   >
     <ContentRenderer

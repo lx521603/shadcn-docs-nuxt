@@ -12,7 +12,7 @@
   "dependencies": {
     "@iconify-json/lucide-lab": "^1.2.3",
     "@iconify-json/simple-icons": "^1.2.95",
-    "nuxt": "^4.5.2",
+    "nuxt": "^4.6.4",
     "vue": "^3.5.42",
     "vue-router": "^5.3.1"
   }
