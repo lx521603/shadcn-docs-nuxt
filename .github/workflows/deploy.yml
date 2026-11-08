@@ -38,7 +38,7 @@ jobs:
           REMOTE_HOST: ${{ secrets.VPS_HOST }}
           REMOTE_USER: ${{ secrets.VPS_USER }}
           
-          SOURCE: ".output/public/"
+          SOURCE: "www/.output/public/"
           TARGET: "/opt/www/sites/mirai.st/index"
           
           # -avz: 归档、显示过程、压缩传输
