@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   extends: ['..'],
   site: {
-    url: 'https://example.com',
+    url: 'https://mirai.st',
   },
   i18n: {
     defaultLocale: 'zhcn',
