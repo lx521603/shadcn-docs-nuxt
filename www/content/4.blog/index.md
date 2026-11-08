@@ -1,6 +1,6 @@
 ---
-title: Blog
-fullpage: true
+title: 博客
+aside: false
 icon: lucide:newspaper
 ---
 
@@ -13,26 +13,27 @@ announcement:
 ---
 
 #title
-Blog
+光影手记
 
 #description
-Read the latest articles and news about the project.
+用镜头代替眼睛，记录那些被光线温柔抚摸的角落与日常。
 ::
 
-::card-group{:cols="3"}
+
+::card-group{:cols="2"}
   ::card
   ---
-  img: /blog/v1-1.png
-  to: /blog/v1-1
+  img: https://gallery.zaeth.com/rest/thailand/ReG6BLk.webp
+  to: /blog/thailand
   ---
   #title
-  shadcn-docs v1.1
+  探索曼谷
 
   #description
-  Changes and upgrade guide for v1.1.
+ Central World 摩托车展
 
   #footer
-  Jun 30, 2025
+  2025 年 6 月 30 日
   ::
   ::card
   ---
@@ -44,9 +45,82 @@ Read the latest articles and news about the project.
   shadcn-docs v1.0
 
   #description
-  Changes and upgrade guide for v1.0.
+  v1.0 变更与升级指南.
 
   #footer
-  May 13, 2025
+  2025 年 5 月 13 日
   ::
+ 
+  
+  
+::
+
+::card-group{:cols="3"}
+  ::card
+  ---
+  img: /landing/DSC00975.webp
+  to: /blog/mangshi
+  ---
+  #title
+  夏日热带风情
+
+  #description
+  芒市菩提街
+
+  #footer
+  2026 年 3 月 1 日
+  ::
+  
+::
+
+::card-group{:cols="2"}
+  ::card
+  ---
+  img: /landing/Q30A5015.webp
+  to: /blog/phuket
+  ---
+  #title
+  泰国普吉岛
+
+  #description
+  泰国普吉岛步行街
+
+  #footer
+  2026 年 3 月 1 日
+  ::
+  ::card
+  ---
+  img: /landing/Q30A4133.webp
+  to: /blog/kaoshanroad
+  ---
+
+  #title
+  曼谷考山路
+
+  #description
+  曼谷考山路
+
+  #footer
+  2017 年 8月 20 日
+  ::
+
+::
+
+::card-group{:cols="2"}
+  ::card
+  ---
+  img: /landing/Q30A126.webp
+  to: /blog/thailandxx
+  ---
+  #title
+  泰国随拍
+
+  #description
+  火车市场 清迈 各地随拍
+
+  #footer
+  2026 年 3 月 1 日
+  ::
+
+
 ::

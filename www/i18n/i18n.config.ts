@@ -1,6 +1,6 @@
 export default defineI18nConfig(() => ({
   legacy: false,
-  locale: 'en',
+  locale: 'zhcn',
   messages: {
     en: {
       // Header nav
@@ -120,6 +120,7 @@ export default defineI18nConfig(() => ({
     },
     zhcn: {
       // Header nav
+      'Home': '首页',
       'shadcn-docs': 'shadcn-docs',
       'Docs': '文档',
       'Getting Started': '开始使用',
@@ -144,7 +145,7 @@ export default defineI18nConfig(() => ({
       'Create Issues': '创建一个 Issue',
 
       // Footer
-      'FOOTER_CREDIT': '由 [**Tony Zhang**](https://github.com/ZTL-UwU/) ❤️ 制作',
+      'FOOTER_CREDIT': `© ${new Date().getFullYear()} [**Mirai Studio**](https://mirai.st/). All rights reserved.`,
       'Sponsor Me': '赞助我',
     },
   },

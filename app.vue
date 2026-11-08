@@ -1,7 +1,7 @@
 <template>
   <NuxtLoadingIndicator :color="false" class="z-100 bg-primary/80" />
   <LayoutBanner v-if="config.banner.enable" />
-  <LayoutHeader />
+  <LayoutHeader v-if="page?.header !== false && !page?.fullpage" />
   <div
     v-if="page && !page.fullpage && baseRouteName !== 'index'"
     class="min-h-screen"

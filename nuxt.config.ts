@@ -31,7 +31,14 @@ export default defineNuxtConfig({
     ],
   },
   i18n: {
-    strategy: 'prefix_except_default',
+    defaultLocale: 'zhcn',
+    locales: [
+      {
+        code: 'zhcn',
+        name: 'Chinese',
+        language: 'zh-CN',
+      },
+    ],
   },
   colorMode: {
     classSuffix: '',
