@@ -39,28 +39,11 @@ jobs:
           REMOTE_USER: ${{ secrets.VPS_USER }}
           
           SOURCE: ".output/public/"
-          TARGET: "/opt/mirai/public/"
+          TARGET: "/opt/www/sites/mirai.st/index"
           
           # -avz: 归档、显示过程、压缩传输
           # --delete: 极其重要！删除 VPS 上存在但新构建产物中不存在的旧文件，保持绝对干净
           ARGS: "-avz --delete"
 
-      - name: Restart PM2 service on VPS
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
-          script: |
-            # 切换到目标目录
-            cd /opt/mirai/
-            pm2 delete mirai-app || true
-            echo "=== 优雅重启 Nuxt 服务 ==="
-            # 逻辑：如果进程 'mirai-app' 存在则重启，如果是第一次部署不存在，则直接启动它
-            pm2 restart mirai-app --update-env || PORT=3004 pm2 start server/index.mjs --name "mirai-app"
-            
-            # 保存 PM2 状态，确保 VPS 重启后服务能自启
-            pm2 save
-            
-            echo "✅ Nuxt 部署完成！当前状态："
-            pm2 status
+      - name: Deployment Complete
+        run: echo "✅ Astro 静态文件已增量覆盖至 1Panel 网站根目录！"
