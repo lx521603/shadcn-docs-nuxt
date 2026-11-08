@@ -14,8 +14,6 @@ jobs:
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 12.18.0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -26,20 +24,29 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build nuxt 4 project
+      - name: Build nuxt project
         run: pnpm build
 
-      - name: Deploy .output to VPS
+      - name: Deploy .output to VPS (rsync)
         uses: easingthemes/ssh-deploy@main
         with:
           SSH_PRIVATE_KEY: ${{ secrets.VPS_SSH_KEY }}
           REMOTE_HOST: ${{ secrets.VPS_HOST }}
           REMOTE_USER: ${{ secrets.VPS_USER }}
-          SOURCE: ".output/"
+          
+          # ⚠️ 关键细节：SOURCE 末尾必须有斜杠 "/"
+          # 这表示：把 .output 目录【里面的所有内容】同步过去
+          # 而不是把 .output 这个文件夹本身同步过去（避免变成 /opt/my-nuxt-app/.output/）
+          SOURCE: ".output/" 
+          
+          # 👇 这里直接写死你的 VPS 目标绝对路径（请根据你的实际情况修改）
           TARGET: "/opt/mirai/"
+          
+          # -avz: 归档、显示过程、压缩传输
+          # --delete: 极其重要！删除 VPS 上存在但新构建产物中不存在的旧文件，保持绝对干净
           ARGS: "-avz --delete"
 
-      # 步骤 4：重启 PM2 服务
+      # 🌟 核心步骤：在 VPS 上平滑重启 PM2 服务
       - name: Restart PM2 service on VPS
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -47,12 +54,15 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
+            # 切换到目标目录
             cd /opt/mirai/
-            pm2 delete mirai-app || true
-            echo "=== 重启 Next.js 服务 ==="
-            pm2 restart mirai-app --update-env || PORT=3004 HOSTNAME="0.0.0.0" pm2 start server.js --name "mirai-app"
-
+            
+            echo "=== 优雅重启 Nuxt 服务 ==="
+            # 逻辑：如果进程 'mirai-app' 存在则重启，如果是第一次部署不存在，则直接启动它
+            pm2 restart mirai-app --update-env || PORT=3004 pm2 start server/index.mjs --name "mirai-app"
+            
+            # 保存 PM2 状态，确保 VPS 重启后服务能自启
             pm2 save
-
-            echo "✅ Next.js 部署完成！当前状态："
+            
+            echo "✅ Nuxt 部署完成！当前状态："
             pm2 status
