@@ -1,6 +1,7 @@
 ---
 title: 博客
 aside: false
+toc: false
 icon: lucide:newspaper
 ---
 
