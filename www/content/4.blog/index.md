@@ -38,22 +38,19 @@ announcement:
   ::
   ::card
   ---
-  img: /blog/v1.png
-  to: /blog/
+  img: /landing/F4APPlk.webp
+  to: /blog/thailand2017
   ---
 
   #title
-  shadcn-docs v1.0
+  2017年泰国
 
   #description
-  v1.0 变更与升级指南.
+  2017年泰国
 
   #footer
-  2025 年 5 月 13 日
-  ::
- 
-  
-  
+  2017 年 2 月 13 日
+  :: 
 ::
 
 ::card-group{:cols="3"}
@@ -87,7 +84,7 @@ announcement:
   泰国普吉岛步行街
 
   #footer
-  2026 年 3 月 1 日
+  2014 年 2 月 1 日
   ::
   ::card
   ---
@@ -120,7 +117,7 @@ announcement:
   火车市场 清迈 各地随拍
 
   #footer
-  2026 年 3 月 1 日
+  2014 年 1 月 30 日
   ::
 
 
