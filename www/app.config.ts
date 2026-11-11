@@ -63,14 +63,14 @@ export default defineAppConfig({
           target: '_self',
           icon: 'lucide:code',
         }],
-      },// {
-    //    title: 'Credits',
-    //    links: [{
-     //     title: 'shadcn-ui',
-     //     to: 'https://ui.shadcn.com/',
-     //     description: 'For the beautiful component design & docs design',
-    //      target: '_blank',
-    //    }, {
+      }, {
+       title: '折腾',
+        links: [{
+          title: '番剧',
+          to: '/anime',
+          description: '好看的番剧、AI短剧，剧集',
+          target: '_blank',
+        }, //{
      //     title: 'shadcn-vue',
      //     to: 'https://www.shadcn-vue.com/',
      //     description: 'For the vue port of shadcn-ui & some docs component source',
@@ -85,8 +85,9 @@ export default defineAppConfig({
       //    to: 'https://content.nuxt.com/',
       //    description: 'Content made easy for Vue Developers',
       //    target: '_blank',
-      //  }],
-      //}, 
+      //  }
+        ],
+      }, 
       {
         title: 'Blog',
         to: '/blog',

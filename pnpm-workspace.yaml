@@ -8,3 +8,6 @@ allowBuilds:
   esbuild: false
   sharp: true
   vue-demi: false
+
+minimumReleaseAgeExclude:
+  - vue-router@5.5.0

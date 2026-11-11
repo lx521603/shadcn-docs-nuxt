@@ -97,6 +97,13 @@ export default defineNuxtConfig({
       include: [
         // https://github.com/ZTL-UwU/shadcn-docs-nuxt/issues/205
         'mermaid',
+        '@iconify/utils',
+        'class-variance-authority',
+        'clsx',
+        'mermaid',
+        'reka-ui',
+        'shiki/wasm',
+        'tailwind-merge',
       ],
     },
   },

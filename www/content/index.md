@@ -1,5 +1,5 @@
 ---
-title: Home
+title: 首页
 description: Beautifully designed Nuxt Content template built with shadcn-vue. Customizable. Compatible. Open Source.
 ---
 
@@ -10,9 +10,14 @@ announcement:
   icon: 'vscode-icons:file-type-nuxt'
   to: https://zaeth.com
 actions:
-  - name: Get Started
+  - name: 阅读文档
     to: /getting-started/introduction
     target: _blank
+  - name: 博客
+    variant: outline
+    target: _blank
+    to: /blog
+    leftIcon: 'simple-icons:blogger'
   - name: Instagram
     variant: outline
     target: _blank
