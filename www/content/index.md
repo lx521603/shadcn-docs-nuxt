@@ -120,3 +120,47 @@ img: /landing/DSC00975.webp
 ::
 ::
 
+::card-group{:cols="3"}
+::ProseImg
+---
+src: landing/DSC00608.webp
+class: w-full h-140 object-cover rounded-lg
+height: 1000
+width: 1000
+---
+#title
+不设防的生动
+
+#content
+有时候，最动人的肖像，恰恰诞生于放弃“完美”的那一秒。
+::
+
+::ProseImg
+---
+src: /landing/Q30A3553.webp
+class: w-full h-140 object-cover rounded-lg
+height: 1000
+width: 500
+---
+#title
+✨ 允许自己放空
+
+#content
+没有明确的终点，也不需要刻意的构图。只是贪恋车窗外那一抹微凉的夜风，和放空时最真实的自我。
+
+::
+
+::ProseImg
+---
+src: /landing/Xco1qkk.webp
+class: w-full h-140 object-cover rounded-lg
+height: 800
+width: 600
+---
+#title
+烈日下的光影
+
+#content
+盛夏的光线是最奢侈的馈赠。正午的硬光切割出锋利的阴影，午后的斜阳把树影拉得修长。
+::
+::
