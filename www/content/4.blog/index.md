@@ -8,9 +8,9 @@ icon: lucide:newspaper
 ::hero-alt
 ---
 announcement:
-  icon: lucide:newspaper
+  icon: lucide:camera
   to: /blog/
-  title: shadcn-docs v1.1
+  title: 随便拍拍
 ---
 
 #title
