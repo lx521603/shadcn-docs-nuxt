@@ -198,11 +198,11 @@ export default defineAppConfig({
           to: 'https://go.91.pt/discord',
           target: '_blank',
         },
-        {
-          icon: 'lucide:github',
-          to: 'https://go.91.pt/github',
-          target: '_blank',
-        },
+   //     {
+    //      icon: 'lucide:github',
+    //      to: 'https://go.91.pt/github',
+    //      target: '_blank',
+    //    },
       ],
     },
     toc: {
@@ -213,16 +213,16 @@ export default defineAppConfig({
       title: 'On this page',
       links: [
         {
-          title: 'Star on GitHub',
+          title: '联系我',
           icon: 'lucide:star',
-          to: 'https://github.com/lx521603/shadcn-docs-nuxt',
+          to: '/contact',
           target: '_blank',
           showLinkIcon: true,
         },
         {
-          title: 'Create Issues',
+          title: '占位待编辑',
           icon: 'lucide:circle-dot',
-          to: 'https://github.com/lx521603/shadcn-docs-nuxt/issues',
+          to: '/',
           target: '_blank',
           showLinkIcon: true,
         },
