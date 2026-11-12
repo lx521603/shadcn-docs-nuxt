@@ -124,7 +124,7 @@ img: /landing/DSC00975.webp
 ::card-group{:cols="3"}
 ::card
 ---
-img: landing/bWE6BLk.webp
+img: /landing/bWE6BLk.webp
 ---
 
 ::
@@ -139,6 +139,29 @@ img: /landing/Q30A3553.webp
 ::card
 ---
 img: /landing/Xco1qkk.webp
+---
+
+::
+::
+
+::card-group{:cols="3"}
+::card
+---
+img: /landing/ruhaokk.webp
+---
+
+::
+
+::card
+---
+img: /landing/zmI6BLk.webp
+---
+
+::
+
+::card
+---
+img: https://gallery.zaeth.com/rest/2017Thailand/AXfPPlk.webp
 ---
 
 ::
