@@ -10,4 +10,6 @@ allowBuilds:
   vue-demi: false
 
 minimumReleaseAgeExclude:
-  - vue-router@5.5.0
+  - vue-router@5.5.0 || 5.5.1
+  - '@eslint/config-array@0.23.6'
+  - eslint@10.15.0
