@@ -13,10 +13,10 @@ actions:
   - name: 阅读文档
     to: /getting-started/introduction
     leftIcon: 'lucide:newspaper'
-    target: _blank
+    target: _self
   - name: 博客
     variant: outline
-    target: _blank
+    target: _self
     to: /blog
     leftIcon: 'simple-icons:blogger'
   - name: Instagram
