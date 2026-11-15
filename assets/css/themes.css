@@ -774,3 +774,15 @@ html.dark {
 
     --ring: 263.4 70% 50.4%;
 }
+
+/* 针对手机端（小于 768px）强制收窄或放宽 /docs 页面的左右留白 */
+@media (max-width: 768px) {
+  /* 强行覆盖 Tailwind 的 container 默认行为 */
+  .container, 
+  [class*="container"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0rem !important;   /* 这里的 1rem (16px) 就是你想要的左右距离，可自行调整 */
+    padding-right: 0rem !important;
+  }
+}

@@ -14,7 +14,7 @@
   <template v-else>
     <div
       v-if="page?.fullpage"
-      class="px-4 py-6 md:px-8"
+      class="px-2 py-4 md:px-6"
       :class="[config.main.padded && 'container']"
     >
       <ContentRenderer

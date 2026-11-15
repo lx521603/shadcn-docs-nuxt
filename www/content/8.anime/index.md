@@ -1,10 +1,11 @@
 ---
 title: 番剧
+description: 个人观影及推荐剧
 aside: false
 toc: false
 icon: lucide:newspaper
 ---
-
+## 漫剧 && AI剧
 ::card-group{:cols="3"}
   ::card
   ---
@@ -20,6 +21,35 @@ icon: lucide:newspaper
   #footer
   2026 年 11 月 08 日
   ::
+
+  ::card
+  ---
+  img: https://gallery.zaeth.com/rest/fm/UKABBnk.webp
+  ---
+  #title
+  发配边关：罪妻开荒养出战神
+
+  #description
+  剧情讲述了从末世穿越的苏禾，主动选择嫁给边关将士萧征，并凭借木系异能开荒种田、改善家境的故事。剧集剧情专注于种田经营，减少了传统种田文中的宅斗、家庭纠纷等情节，并压缩了感情线，在有限篇幅内构建了一个以“正反馈”为核心的世界。
+
+
+  #footer
+  2026 年 11 月 15 日
+  ::
   
+  ::card
+  ---
+  img: https://p3-novel.byteimg.com/novel-pic/a73b7237411cbbaef523bc8fb3b632dc~tplv-shrink:640:0.webp
+  ---
+  #title
+  枯骨成仙
+
+  #description
+  身死三十年，叶长生被仙子以往生丹复活，身怀顶级苍灵根却只剩十年寿元。入云渺宗后，他屡遭长老刁难与同门欺凌，却凭借掌心灵脉种化腐朽为神奇，勤勉修炼、步步逆袭。他坚守道义为恩人讨公道，虽遭宗门流放，仍不改向道之心，于逆境中踏破困境，一路披荆斩棘，走上正道仙途，改写宿命传奇。
+
+
+  #footer
+  2026 年 11 月 15 日
+  ::
   
 ::
