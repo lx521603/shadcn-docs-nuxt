@@ -100,7 +100,7 @@ export default defineNuxtConfig({
         '@iconify/utils',
         'class-variance-authority',
         'clsx',
-        'mermaid',
+       // 'mermaid',
         'reka-ui',
         'shiki/wasm',
         'tailwind-merge',

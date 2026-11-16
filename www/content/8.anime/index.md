@@ -53,3 +53,21 @@ icon: lucide:newspaper
   ::
   
 ::
+
+::card-group{:cols="3"}
+  ::card
+  ---
+  img: https://p3-novel.byteimg.com/novel-pic/d276704b9a05ee371eb1a1c0e42ca581~tplv-shrink:640:0.webp
+  ---
+  #title
+  万妖图录传
+
+  #description
+  以妖血为墨、百妖谱为卷，可摹其形、夺其神通。姜月初穿越成大唐少女，觉醒万妖图录系统。
+
+
+  #footer
+  2026 年 11 月 15 日
+  ::
+
+::
