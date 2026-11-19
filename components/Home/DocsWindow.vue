@@ -223,7 +223,11 @@ const beamConfig = [
   overflow: hidden;
 }
 .dw-image-container img {
-  width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block;
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; /* ✅ 确保图片始终填满容器，多余部分自动裁剪，不会留白 */
+  object-position: center 25%; /* 保持原来的聚焦位置（偏上） */
+  display: block;
 }
 
 .dw-chip {

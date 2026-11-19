@@ -26,17 +26,12 @@
           Blog
         </NuxtLink>
 
-        <a class="mirai-star" href="/anime">
+        <NuxtLink to="/anime/" class="mirai-star">
           <span class="mirai-star-label">
             <IconBrandGithub :size="16" aria-hidden="true" />
             折腾
-            <span class="mirai-sr-only"> the {{ site.engine }} template on GitHub</span>
           </span>
-          <span v-if="stars !== undefined" class="mirai-star-count">
-            {{ compactCount(stars) }}
-            <span class="mirai-sr-only"> {{ stars === 1 ? 'star' : 'stars' }}</span>
-          </span>
-        </a>
+        </NuxtLink>
       </div>
 
       <div class="mirai-install">
