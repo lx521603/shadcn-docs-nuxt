@@ -786,3 +786,34 @@ html.dark {
     padding-right: 0rem !important;
   }
 }
+/* ==========================================
+   强制修复 Docs 页面 Dark Mode (硬编码兜底)
+   ========================================== */
+html.dark, html.dark body {
+  background-color: #09090b !important;
+  color: #fafafa !important;
+}
+
+html.dark .prose,
+html.dark .prose h1, html.dark .prose h2, html.dark .prose h3,
+html.dark .prose h4, html.dark .prose h5, html.dark .prose h6 {
+  color: #fafafa !important;
+}
+
+html.dark .prose p, html.dark .prose li, html.dark .prose strong, html.dark .prose blockquote {
+  color: #a1a1aa !important;
+}
+
+html.dark .prose a {
+  color: #fafafa !important;
+}
+
+html.dark .prose code {
+  background-color: #27272a !important;
+  color: #fafafa !important;
+}
+
+html.dark .prose pre {
+  background-color: #18181b !important;
+  border-color: #27272a !important;
+}
