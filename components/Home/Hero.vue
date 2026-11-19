@@ -3,7 +3,7 @@
     <div class="sheet marks" aria-hidden="true" />
     
     <div class="copy">
-      <NuxtLink class="pill" to="/docs/release-notes">
+      <NuxtLink class="pill" to="/contact">
         <span class="pillTag">Mirai</span>
         佛系更新
         <IconArrowRight :size="14" aria-hidden="true" />
@@ -17,7 +17,7 @@
       
       <div class="actions">
         <!-- 使用独特的类名，防止全局冲突 -->
-        <NuxtLink to="/docs" class="hero-btn hero-btn-primary">
+        <NuxtLink to="/getting-started/introduction" class="hero-btn hero-btn-primary">
           <IconBook :size="20" aria-hidden="true" />
           文档
         </NuxtLink>
@@ -27,10 +27,10 @@
           Blog
         </NuxtLink>
 
-        <a class="star" href="https://mirai.st/">
+        <a class="star" href="/anime">
           <span class="starLabel">
             <IconBrandGithub :size="16" aria-hidden="true" />
-            xxx
+            折腾
             <!-- 使用安全的 sr-only 类名 -->
             <span class="sr-only"> the {{ site.engine }} template on GitHub</span>
           </span>
