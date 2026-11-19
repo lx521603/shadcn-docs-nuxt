@@ -39,6 +39,24 @@ icon: lucide:newspaper
   
   ::card
   ---
+  img: https://p6-novel.byteimg.com/novel-pic/01ccc47ebbde105c44327cc89014b396~tplv-shrink:640:0.webp
+  ---
+  #title
+  五灵根修仙：我有一个吞噬空间
+
+  #description
+  仙之途，路漫漫！叶凌霄意外获得仙缘，却被卖入仙门之中挖矿。好在此时他意外从家传宝玉之中获得了可炼化一切蕴含能量的事物化作纯净灵气的鸿蒙空间。矿土，灵石，废丹，甚至被杀的修士皆是蕴含灵气。只要任何蕴含灵气的事物放入到这神秘空间之中都能化作纯净的灵气修炼速度提升千百倍！不同的事物化作的灵气还有不同的效果！凭借这强大的空间，叶凌霄快速成长，最终成为逆天强者！
+
+
+  #footer
+  2026 年 11 月 19 日
+  ::
+  
+::
+
+::card-group{:cols="3"}
+  ::card
+  ---
   img: https://p3-novel.byteimg.com/novel-pic/6ee76cbe0409499f49ad29c79a092dc4~tplv-shrink:640:0.webp
   ---
   #title
@@ -51,10 +69,7 @@ icon: lucide:newspaper
   #footer
   2026 年 11 月 18 日
   ::
-  
-::
 
-::card-group{:cols="3"}
   ::card
   ---
   img: https://p3-novel.byteimg.com/novel-pic/a73b7237411cbbaef523bc8fb3b632dc~tplv-shrink:640:0.webp
@@ -69,6 +84,26 @@ icon: lucide:newspaper
   #footer
   2026 年 11 月 15 日
   ::
+
+  ::card
+  ---
+  img: https://p6-novel.byteimg.com/novel-pic/70b9d9c2e826f8d3a4aab5af252edee7~tplv-shrink:640:0.webp
+  ---
+  #title
+  凡人百世书
+
+  #description
+  资质平庸的陈默身负灭门血仇，退隐经商四十年仍被紫衣门仇家追着斩草除根。濒死时，他觉醒百世轮回系统：每死一次，意识不泯，还能用评分兑换资质悟性与血脉，下一世重来。他化名林默潜入仇门蛰伏十年，投身七杀魔门成了血莲公子，再世为戍边封侯的飞将军，却三度功败垂成。第五世，他转世镇南王世子叶玄，携四世记忆入局，在太后专权、皇权倾轧和通往仙门的三卷天书间步步为营。百世未满，这一次他要亲手了结血债、叩开仙门。
+
+
+  #footer
+  2026 年 11 月 19 日
+  ::
+
+::
+
+::card-group{:cols="3"}
+  
 
   ::card
   ---

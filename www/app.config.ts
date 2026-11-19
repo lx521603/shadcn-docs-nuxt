@@ -69,7 +69,7 @@ export default defineAppConfig({
           title: '番剧',
           to: '/anime',
           description: '好看的番剧、AI短剧，剧集',
-          target: '_blank',
+          target: '_self',
         }, //{
      //     title: 'shadcn-vue',
      //     to: 'https://www.shadcn-vue.com/',

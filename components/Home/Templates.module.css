@@ -1,0 +1,178 @@
+.section {
+  position: relative;
+}
+
+.arc {
+  position: absolute;
+  top: 5.5rem; /* 88px */
+  left: 3rem; /* 48px */
+  width: 7.5rem; /* 120px */
+  height: 7.5rem;
+  color: var(--site-accent, #3b82f6);
+  opacity: 0.42;
+  pointer-events: none;
+}
+.arcRight {
+  right: 3rem;
+  left: auto;
+  transform: scaleX(-1);
+}
+@media (max-width: 1024px) {
+  .arc, .arcRight { display: none; }
+}
+
+.grid {
+  --marks-gap: 0.5rem; /* 8px */
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem; /* 16px */
+  margin: 3.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 35rem; /* 560px */
+    margin-inline: auto;
+  }
+}
+@media (max-width: 480px) {
+  .grid { --marks-gap: 0.125rem; }
+}
+
+.card {
+  --engine-from: var(--mantine-color-blue-7, #1d4ed8);
+  --engine-to: var(--mantine-color-cyan-7, #0e7490);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.5rem; /* 24px */
+  border: 1px solid var(--site-frame, #e2e8f0);
+  border-radius: 0.75rem; /* 12px */
+  background: var(--site-card, #ffffff);
+  text-align: left;
+  transition: transform 200ms ease, border-color 200ms ease;
+}
+.card[data-engine='nextra'] {
+  --engine-from: var(--mantine-color-violet-7, #6d28d9);
+  --engine-to: var(--mantine-color-grape-6, #9333ea);
+}
+.card[data-engine='fumadocs'] {
+  --engine-from: var(--mantine-color-orange-8, #c2410c);
+  --engine-to: var(--mantine-color-pink-7, #be185d);
+}
+.card:hover {
+  border-color: color-mix(in srgb, var(--engine-from) 70%, transparent);
+  transform: translateY(-3px);
+}
+.card[data-current] {
+  background: linear-gradient(160deg, color-mix(in srgb, var(--engine-from) 13%, var(--site-surface, #ffffff)), var(--site-surface, #ffffff) 62%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .card { transition: none; }
+  .card:hover { transform: none; }
+}
+
+.head { display: flex; align-items: center; gap: 0.75rem; }
+
+.mark {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 2.75rem; /* 44px */
+  height: 2.75rem;
+  border-radius: 0.625rem; /* 10px */
+  background: linear-gradient(135deg, var(--engine-from), var(--engine-to));
+  color: #ffffff;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 1.375rem; /* 22px */
+  font-weight: 700;
+  line-height: 1;
+}
+
+.names { display: flex; flex: 1; flex-direction: column; min-width: 0; }
+.name { margin: 0; color: var(--site-ink, #0f172a); font-size: 1.25rem; font-weight: 600; line-height: 1.2; letter-spacing: -0.015em; }
+.package { color: var(--site-text, #334155); font-family: ui-monospace, monospace; font-size: 0.75rem; }
+
+.here {
+  flex: none;
+  align-self: flex-start;
+  padding: 0.1875rem 0.5rem; /* 3px 8px */
+  border-radius: 0.25rem; /* 4px */
+  background: var(--site-fill, #3b82f6);
+  color: #ffffff;
+  font-family: ui-monospace, monospace;
+  font-size: 0.625rem; /* 10px */
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.tagline { margin: 1.125rem 0 0; color: var(--site-text, #334155); font-size: 0.9375rem; line-height: 1.55; }
+
+.points { display: grid; gap: 0.5rem; margin: 1.125rem 0 0; padding: 0; list-style: none; }
+.points li { display: flex; align-items: flex-start; gap: 0.5rem; color: var(--site-ink, #0f172a); font-size: 0.875rem; line-height: 1.45; }
+.points svg { flex: none; margin-top: 0.125rem; color: var(--site-accent, #3b82f6); }
+
+.links { display: flex; align-items: center; gap: 1.125rem; margin-top: auto; padding-top: 1.5rem; }
+
+.stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3125rem; /* 5px */
+  margin-left: auto;
+  color: var(--site-text, #334155);
+  font-family: ui-monospace, monospace;
+  font-size: 0.8125rem; /* 13px */
+  font-weight: 500;
+  line-height: 1;
+}
+.stars svg { color: var(--site-accent, #3b82f6); }
+
+.git {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3125rem;
+  color: var(--site-text, #334155);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+.git:hover { color: var(--site-ink, #0f172a); text-decoration: underline; }
+
+/* 复用之前的 BorderAnimate 纯 CSS 实现，绑定当前卡片的颜色 */
+.borderAnimate {
+  position: relative;
+  border-radius: 0.75rem;
+  z-index: 1;
+  isolation: isolate;
+  height: 100%;
+}
+.borderAnimate::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 0.875rem;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    transparent 58%,
+    var(--beam-from, #3b82f6) 80%,
+    var(--beam-to, #8b5cf6) 94%,
+    transparent 100%
+  );
+  animation: beam-spin 6s linear infinite;
+  z-index: -1;
+}
+.borderAnimate::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: 0.625rem;
+  background: var(--site-card, #ffffff);
+  z-index: -1;
+}
+@keyframes beam-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }

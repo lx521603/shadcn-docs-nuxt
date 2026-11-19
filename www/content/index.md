@@ -1,6 +1,6 @@
 ---
 title: 首页
-description:老李游记
+description: 老李游记
 ---
 
 ::hero
@@ -47,7 +47,7 @@ img: /landing/Q30A0695.webp
 每一次快门、每一段文字
 
 #content
-每一次快门、每一段文字,都是对时光的温柔收藏。这里记录着旅途中的风景、街角的偶遇、以及那些让人忍不住微笑的小确幸。
+每一次快门、每一段文字，都是对时光的温柔收藏。这里记录着旅途中的风景、街角的偶遇、以及那些让人忍不住微笑的小确幸。
 ::
 
 ::card
@@ -70,7 +70,6 @@ img: /landing/Q30A4133.webp
 
 #content
 身体跟着节奏失控，灵魂在人群里找到自由。这一刻，不需要理由。
-
 ::
 
 ::card
@@ -81,14 +80,14 @@ img: /landing/Q30A126.webp
 转角遇见的未命名诗篇
 
 #content
-不预设构图，不等光线完美，只是用眼睛先于快门去生活。不预设构图，不等光线完美，只是用眼睛先于快门去生活。
+不预设构图，不等光线完美，只是用眼睛先于快门去生活。
 ::
 ::
 
 ::card-group{:cols="3"}
 ::card
 ---
-img: landing/Q30A3919.webp
+img: /landing/Q30A3919.webp
 ---
 #title
 不设防的生动
@@ -106,7 +105,6 @@ img: /landing/TfH0okk.webp
 
 #content
 没有明确的终点，也不需要刻意的构图。只是贪恋车窗外那一抹微凉的夜风，和放空时最真实的自我。
-
 ::
 
 ::card
@@ -126,21 +124,18 @@ img: /landing/DSC00975.webp
 ---
 img: /landing/bWE6BLk.webp
 ---
-
 ::
 
 ::card
 ---
 img: /landing/Q30A3553.webp
 ---
-
 ::
 
 ::card
 ---
 img: /landing/Xco1qkk.webp
 ---
-
 ::
 ::
 
@@ -149,20 +144,17 @@ img: /landing/Xco1qkk.webp
 ---
 img: /landing/ruhaokk.webp
 ---
-
 ::
 
 ::card
 ---
 img: /landing/zmI6BLk.webp
 ---
-
 ::
 
 ::card
 ---
 img: https://gallery.zaeth.com/rest/2017Thailand/AXfPPlk.webp
 ---
-
 ::
 ::

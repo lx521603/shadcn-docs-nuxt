@@ -1,0 +1,70 @@
+<template>
+  <section :class="$style.hero" :data-engine="site.key || 'mirai'">
+    <div :class="[$style.marks, $style.sheet]" aria-hidden="true" />
+    
+    <div :class="$style.copy">
+      <NuxtLink :class="$style.pill" to="/docs/release-notes">
+        <span :class="$style.pillTag">Mirai</span>
+        佛系更新
+        <IconArrowRight :size="14" aria-hidden="true" />
+      </NuxtLink>
+      
+      <h1 :class="$style.title">
+        老李游记 <span :class="$style.engine">Mirai</span> Studio
+      </h1>
+      
+      <p :class="$style.lead">{{ site.lead }}</p>
+      
+      <div :class="$style.actions">
+        <NuxtLink to="/docs" :class="[$style.button, $style.primary]">
+          <IconBook :size="20" aria-hidden="true" />
+          文档
+        </NuxtLink>
+
+        <NuxtLink to="/blog/" :class="[$style.button, $style.secondary]">
+          <IconBrandBlogger :size="20" aria-hidden="true" />
+          Blog
+        </NuxtLink>
+
+        <a :class="$style.star" href="https://mirai.st/">
+          <span :class="$style.starLabel">
+            <IconBrandGithub :size="16" aria-hidden="true" />
+            xxx
+            <span :class="$style.hidden"> the template on GitHub</span>
+          </span>
+          <span v-if="stars !== undefined" :class="$style.starCount">
+            {{ compactCount(stars) }}
+            <span :class="$style.hidden"> {{ stars === 1 ? 'star' : 'stars' }}</span>
+          </span>
+        </a>
+      </div>
+
+      <div :class="$style.install">
+        <InstallLine />
+      </div>
+
+      <div v-if="$slots.badge || badge" :class="$style.badge">
+        <slot name="badge">{{ badge }}</slot>
+      </div>
+    </div>
+
+    <div :class="$style.visual">
+      <DocsWindow />
+    </div>
+  </section>
+</template>
+
+<script setup lang="ts">
+import { IconArrowRight, IconBook, IconBrandBlogger, IconBrandGithub } from '@tabler/icons-vue';
+import { site } from '~/config/site';
+import { compactCount } from '~/components/stats';
+
+defineProps<{
+  badge?: any;
+  stars?: number;
+}>();
+</script>
+
+<style module>
+/* 请直接粘贴下方我为您转换好的 "Hero 标准 CSS" */
+</style>
