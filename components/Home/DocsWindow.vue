@@ -4,10 +4,10 @@
     
     <div class="dw-tilt">
       <span class="dw-dim" data-axis="x">
-        <b>480 px</b>
+        <b>500 px</b>
       </span>
       <span class="dw-dim" data-axis="y">
-        <b>480 px</b>
+        <b>500 px</b>
       </span>
       
       <!-- 纯 CSS 实现的光束动画边框 -->
@@ -218,7 +218,7 @@ const beamConfig = [
 
 .dw-image-container {
   aspect-ratio: 1 / 1;
-  width: min(480px, 100%);
+  width: min(500px, 100%);
   height: auto;
   overflow: hidden;
 }

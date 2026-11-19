@@ -1,56 +1,54 @@
 <template>
-  <section class="hero" :data-engine="site.key">
-    <div class="sheet marks" aria-hidden="true" />
+  <section class="mirai-hero" :data-engine="site.key">
+    <div class="mirai-sheet mirai-marks" aria-hidden="true" />
     
-    <div class="copy">
-      <NuxtLink class="pill" to="/contact">
-        <span class="pillTag">Mirai</span>
+    <div class="mirai-copy">
+      <NuxtLink class="mirai-pill" to="/contact">
+        <span class="mirai-pill-tag">Mirai</span>
         佛系更新
         <IconArrowRight :size="14" aria-hidden="true" />
       </NuxtLink>
       
-      <h1 class="title">
-        老李游记 <span class="engine">Mirai</span> Studio
+      <h1 class="mirai-title">
+        老李游记 <span class="mirai-engine">Mirai</span> Studio
       </h1>
       
-      <p class="lead">{{ site.lead }}</p>
+      <p class="mirai-lead">{{ site.lead }}</p>
       
-      <div class="actions">
-        <!-- 使用独特的类名，防止全局冲突 -->
-        <NuxtLink to="/getting-started/introduction" class="hero-btn hero-btn-primary">
+      <div class="mirai-actions">
+        <NuxtLink to="/getting-started/introduction" class="mirai-btn mirai-btn-primary">
           <IconBook :size="20" aria-hidden="true" />
           文档
         </NuxtLink>
 
-        <NuxtLink to="/blog/" class="hero-btn hero-btn-secondary">
+        <NuxtLink to="/blog/" class="mirai-btn mirai-btn-secondary">
           <IconBrandBlogger :size="20" aria-hidden="true" />
           Blog
         </NuxtLink>
 
-        <a class="star" href="/anime">
-          <span class="starLabel">
+        <a class="mirai-star" href="/anime">
+          <span class="mirai-star-label">
             <IconBrandGithub :size="16" aria-hidden="true" />
             折腾
-            <!-- 使用安全的 sr-only 类名 -->
-            <span class="sr-only"> the {{ site.engine }} template on GitHub</span>
+            <span class="mirai-sr-only"> the {{ site.engine }} template on GitHub</span>
           </span>
-          <span v-if="stars !== undefined" class="starCount">
+          <span v-if="stars !== undefined" class="mirai-star-count">
             {{ compactCount(stars) }}
-            <span class="sr-only"> {{ stars === 1 ? 'star' : 'stars' }}</span>
+            <span class="mirai-sr-only"> {{ stars === 1 ? 'star' : 'stars' }}</span>
           </span>
         </a>
       </div>
 
-      <div class="install">
+      <div class="mirai-install">
         <!-- <InstallLine /> -->
       </div>
 
-      <div v-if="$slots.badge || badge" class="badge">
+      <div v-if="$slots.badge || badge" class="mirai-badge">
         <slot name="badge">{{ badge }}</slot>
       </div>
     </div>
 
-    <div class="visual">
+    <div class="mirai-visual">
       <HomeDocsWindow />
     </div>
   </section>
@@ -74,9 +72,24 @@ defineProps<{
 }>();
 </script>
 
-<!-- ✅ 必须加 scoped，防止污染 Header 和其他组件！ -->
-<style scoped>
-.hero {
+<!-- ✅ 注意：这里没有 scoped！使用 mirai- 前缀避免污染 -->
+<style>
+/* Light 模式 */
+.mirai-hero {
+  --mirai-ink: #0f172a;
+  --mirai-text: #334155;
+  --mirai-accent: #3b82f6;
+  --mirai-frame: #e2e8f0;
+  --mirai-surface: #ffffff;
+  --mirai-fill: #0f172a;
+  --mirai-glow: #3b82f6;
+  --mirai-mark: #cbd5e1;
+  --mirai-tint: #dbeafe;
+  --mirai-rule: #e2e8f0;
+  --mirai-engine-from: #3b82f6;
+  --mirai-engine-to: #8b5cf6;
+  --mirai-title-max: 4.5rem;
+
   position: relative;
   display: flex;
   flex-direction: row;
@@ -86,125 +99,171 @@ defineProps<{
   min-height: min(45rem, calc(100svh - 4rem));
   padding: 5.5rem 5.25rem 5rem;
   background: radial-gradient(
-    var(--light, ellipse 38% 56% at 72% 46%),
-    color-mix(in srgb, var(--site-glow, #3b82f6) 42%, transparent),
+    ellipse 38% 56% at 72% 46%,
+    color-mix(in srgb, var(--mirai-glow) 42%, transparent),
     transparent 72%
   );
 }
 
-/* 引擎特定颜色 */
-.hero[data-engine='nextra'] { --engine-from: #6b21a8; --engine-to: #7e22ce; }
-.hero[data-engine='fumadocs'] { --engine-from: #c2410c; --engine-to: #be185d; }
+/* ✅ Dark 模式 - 直接覆盖变量 */
+html.dark .mirai-hero,
+html.dark-mode .mirai-hero,
+html[data-theme='dark'] .mirai-hero,
+html[data-color-mode='dark'] .mirai-hero,
+html[data-mantine-color-scheme='dark'] .mirai-hero {
+  --mirai-ink: #f8fafc;
+  --mirai-text: #cbd5e1;
+  --mirai-accent: #60a5fa;
+  --mirai-frame: #334155;
+  --mirai-surface: #1e293b;
+  --mirai-fill: #f8fafc;
+  --mirai-glow: #1d4ed8;
+  --mirai-mark: #475569;
+  --mirai-tint: #1e3a8a;
+  --mirai-rule: #334155;
+}
 
-/* Dark mode 覆盖 */
-:global(html.dark) .hero { --site-glow: #1d4ed8; }
-:global(html.dark) .hero[data-engine='nextra'] { --engine-from: #a78bfa; --engine-to: #f472b6; }
-:global(html.dark) .hero[data-engine='fumadocs'] { --engine-from: #fb923c; --engine-to: #f472b6; }
+/* 引擎颜色 - Light */
+.mirai-hero[data-engine='nextra'] {
+  --mirai-engine-from: #6b21a8;
+  --mirai-engine-to: #7e22ce;
+}
+.mirai-hero[data-engine='fumadocs'] {
+  --mirai-engine-from: #c2410c;
+  --mirai-engine-to: #be185d;
+}
+
+/* 引擎颜色 - Dark */
+html.dark .mirai-hero[data-engine='nextra'],
+html.dark-mode .mirai-hero[data-engine='nextra'],
+html[data-theme='dark'] .mirai-hero[data-engine='nextra'],
+html[data-color-mode='dark'] .mirai-hero[data-engine='nextra'],
+html[data-mantine-color-scheme='dark'] .mirai-hero[data-engine='nextra'] {
+  --mirai-engine-from: #a78bfa;
+  --mirai-engine-to: #f472b6;
+}
+
+html.dark .mirai-hero[data-engine='fumadocs'],
+html.dark-mode .mirai-hero[data-engine='fumadocs'],
+html[data-theme='dark'] .mirai-hero[data-engine='fumadocs'],
+html[data-color-mode='dark'] .mirai-hero[data-engine='fumadocs'],
+html[data-mantine-color-scheme='dark'] .mirai-hero[data-engine='fumadocs'] {
+  --mirai-engine-from: #fb923c;
+  --mirai-engine-to: #f472b6;
+}
 
 @media (max-width: 1024px) {
-  .hero {
-    --light: ellipse 64% 26% at 50% 76%;
+  .mirai-hero {
     flex-direction: column;
     min-height: 0;
     padding: 4rem 3.25rem 3.5rem;
   }
 }
 @media (max-width: 768px) {
-  .hero { padding: 2.75rem 1.75rem 2.5rem; }
+  .mirai-hero { padding: 2.75rem 1.75rem 2.5rem; }
 }
 
-.sheet {
+.mirai-sheet {
   position: absolute;
   inset: 2.25rem 3rem 1.75rem;
-  border: 1px solid var(--site-rule, #e2e8f0);
+  border: 1px solid var(--mirai-rule);
   pointer-events: none;
 }
-@media (max-width: 1024px) { .sheet { inset: 1.5rem 1.75rem 1.25rem; } }
-@media (max-width: 768px) { .sheet { inset: 1rem 1rem 0.875rem; } }
+@media (max-width: 1024px) { .mirai-sheet { inset: 1.5rem 1.75rem 1.25rem; } }
+@media (max-width: 768px) { .mirai-sheet { inset: 1rem 1rem 0.875rem; } }
 
-.marks {
-  --marks-gap: 0px;
+.mirai-marks {
+  --mirai-marks-gap: 0px;
   position: relative;
 }
-.marks::before {
-  --stroke: linear-gradient(var(--site-mark, #cbd5e1), var(--site-mark, #cbd5e1));
+.mirai-marks::before {
+  --mirai-stroke: linear-gradient(var(--mirai-mark), var(--mirai-mark));
   position: absolute;
-  inset: calc(-0.5625rem - var(--marks-gap));
+  inset: calc(-0.5625rem - var(--mirai-marks-gap));
   background:
-    var(--stroke) left 0 top 0.5rem / 1.0625rem 1px no-repeat,
-    var(--stroke) left 0.5rem top 0 / 1px 1.0625rem no-repeat,
-    var(--stroke) right 0 top 0.5rem / 1.0625rem 1px no-repeat,
-    var(--stroke) right 0.5rem top 0 / 1px 1.0625rem no-repeat,
-    var(--stroke) left 0 bottom 0.5rem / 1.0625rem 1px no-repeat,
-    var(--stroke) left 0.5rem bottom 0 / 1px 1.0625rem no-repeat,
-    var(--stroke) right 0 bottom 0.5rem / 1.0625rem 1px no-repeat,
-    var(--stroke) right 0.5rem bottom 0 / 1px 1.0625rem no-repeat;
+    var(--mirai-stroke) left 0 top 0.5rem / 1.0625rem 1px no-repeat,
+    var(--mirai-stroke) left 0.5rem top 0 / 1px 1.0625rem no-repeat,
+    var(--mirai-stroke) right 0 top 0.5rem / 1.0625rem 1px no-repeat,
+    var(--mirai-stroke) right 0.5rem top 0 / 1px 1.0625rem no-repeat,
+    var(--mirai-stroke) left 0 bottom 0.5rem / 1.0625rem 1px no-repeat,
+    var(--mirai-stroke) left 0.5rem bottom 0 / 1px 1.0625rem no-repeat,
+    var(--mirai-stroke) right 0 bottom 0.5rem / 1.0625rem 1px no-repeat,
+    var(--mirai-stroke) right 0.5rem bottom 0 / 1px 1.0625rem no-repeat;
   content: '';
   pointer-events: none;
 }
 
-.copy {
+.mirai-copy {
   flex: 1 1 50%;
   position: relative;
   z-index: 1;
   min-width: 0;
 }
 
-.pill {
+.mirai-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 1.75rem;
   padding: 0.25rem 0.75rem 0.25rem 0.25rem;
-  border: 1px solid var(--site-frame, #e2e8f0);
+  border: 1px solid var(--mirai-frame);
   border-radius: 999px;
-  background: var(--site-surface, #ffffff);
-  color: var(--site-ink, #0f172a);
+  background: var(--mirai-surface);
+  color: var(--mirai-ink);
   font-size: 0.8125rem;
   font-weight: 500;
   line-height: 1.5;
   text-decoration: none;
   transition: border-color 150ms ease;
 }
-.pill:hover { border-color: var(--site-accent, #3b82f6); }
-.pill svg { color: var(--site-accent, #3b82f6); }
+.mirai-pill:hover { border-color: var(--mirai-accent); }
+.mirai-pill svg { color: var(--mirai-accent); }
 
-.pillTag {
+.mirai-pill-tag {
   padding: 0.125rem 0.5625rem;
   border-radius: 999px;
-  background: var(--site-fill, #0f172a);
+  background: var(--mirai-fill);
   color: #ffffff;
   font-family: ui-monospace, monospace;
   font-size: 0.75rem;
   font-weight: 700;
 }
 
-.title {
+/* Dark 模式下 pill tag 文字反转 */
+html.dark .mirai-pill-tag,
+html.dark-mode .mirai-pill-tag,
+html[data-theme='dark'] .mirai-pill-tag,
+html[data-color-mode='dark'] .mirai-pill-tag,
+html[data-mantine-color-scheme='dark'] .mirai-pill-tag {
+  color: #0f172a;
+}
+
+.mirai-title {
   margin: 0;
-  color: var(--site-ink, #0f172a);
-  font-size: clamp(2.625rem, 5.6vw, 4.5rem);
+  color: var(--mirai-ink);
+  font-size: clamp(2.625rem, 5.6vw, var(--mirai-title-max));
   font-weight: 600;
   line-height: 1.02;
   letter-spacing: -0.04em;
   text-wrap: balance;
 }
 
-.engine {
-  background-image: linear-gradient(100deg, var(--engine-from, #3b82f6) 10%, var(--engine-to, #8b5cf6) 90%);
+.mirai-engine {
+  background-image: linear-gradient(100deg, var(--mirai-engine-from) 10%, var(--mirai-engine-to) 90%);
   background-clip: text;
   color: transparent;
 }
 
-.lead {
+.mirai-lead {
   max-width: 33.75rem;
   margin: 1.5rem 0 0;
-  color: var(--site-text, #334155);
+  color: var(--mirai-text);
   font-size: 1.125rem;
   line-height: 1.6;
   text-wrap: pretty;
 }
 
-.actions {
+.mirai-actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -212,8 +271,7 @@ defineProps<{
   margin-top: 2rem;
 }
 
-/* ✅ 使用独特的类名，防止与全局 .button 冲突导致消失 */
-.hero-btn {
+.mirai-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -225,59 +283,68 @@ defineProps<{
   text-decoration: none;
   transition: background-color 150ms ease, border-color 150ms ease, transform 150ms ease;
 }
-.hero-btn:hover { transform: translateY(-1px); }
-.hero-btn:active { transform: translateY(0); }
+.mirai-btn:hover { transform: translateY(-1px); }
+.mirai-btn:active { transform: translateY(0); }
 
-.hero-btn-primary {
-  background: var(--site-fill, #0f172a);
+.mirai-btn-primary {
+  background: var(--mirai-fill);
   color: #ffffff;
-  box-shadow: 0 10px 24px -12px var(--site-fill, #0f172a);
+  box-shadow: 0 10px 24px -12px var(--mirai-fill);
 }
 
-.hero-btn-secondary {
-  background: var(--site-surface, #ffffff);
-  color: var(--site-ink, #0f172a);
-  border: 1px solid var(--site-frame, #e2e8f0);
+/* Dark 模式下主按钮文字反转 */
+html.dark .mirai-btn-primary,
+html.dark-mode .mirai-btn-primary,
+html[data-theme='dark'] .mirai-btn-primary,
+html[data-color-mode='dark'] .mirai-btn-primary,
+html[data-mantine-color-scheme='dark'] .mirai-btn-primary {
+  color: #0f172a;
 }
-.hero-btn-secondary:hover { border-color: var(--site-accent, #3b82f6); }
-.hero-btn-secondary svg { color: var(--site-accent, #3b82f6); }
 
-.star {
+.mirai-btn-secondary {
+  background: var(--mirai-surface);
+  color: var(--mirai-ink);
+  border: 1px solid var(--mirai-frame);
+}
+.mirai-btn-secondary:hover { border-color: var(--mirai-accent); }
+.mirai-btn-secondary svg { color: var(--mirai-accent); }
+
+.mirai-star {
   display: inline-flex;
   overflow: hidden;
-  border: 1px solid var(--site-frame, #e2e8f0);
+  border: 1px solid var(--mirai-frame);
   border-radius: 0.375rem;
-  background: var(--site-surface, #ffffff);
-  color: var(--site-ink, #0f172a);
+  background: var(--mirai-surface);
+  color: var(--mirai-ink);
   font-size: 0.8125rem;
   line-height: 1.875rem;
   text-decoration: none;
   white-space: nowrap;
   transition: border-color 150ms ease;
 }
-.star:hover { border-color: var(--site-accent, #3b82f6); }
+.mirai-star:hover { border-color: var(--mirai-accent); }
 
-.starLabel {
+.mirai-star-label {
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
   padding-inline: 0.625rem;
   font-weight: 600;
 }
-.starLabel svg { color: var(--site-accent, #3b82f6); }
+.mirai-star-label svg { color: var(--mirai-accent); }
 
-.starCount {
+.mirai-star-count {
   padding-inline: 0.625rem;
-  border-left: 1px solid var(--site-frame, #e2e8f0);
-  background: var(--site-tint, #dbeafe);
+  border-left: 1px solid var(--mirai-frame);
+  background: var(--mirai-tint);
   font-family: ui-monospace, monospace;
   font-weight: 500;
 }
 
-.install { margin-top: 1.75rem; }
-.badge { display: flex; margin-top: 1.25rem; }
+.mirai-install { margin-top: 1.75rem; }
+.mirai-badge { display: flex; margin-top: 1.25rem; }
 
-.visual {
+.mirai-visual {
   flex: 1 1 50%;
   position: relative;
   min-width: 0;
@@ -286,8 +353,7 @@ defineProps<{
   align-items: center;
 }
 
-/* ✅ 改名 sr-only，绝对安全，不会污染全局 .hidden */
-.sr-only {
+.mirai-sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
