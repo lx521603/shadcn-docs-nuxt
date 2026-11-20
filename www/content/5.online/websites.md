@@ -65,7 +65,7 @@ navigation:
   icon: i-simple-icons-ip
   target: _blank
   title: 南京大学测速站
-  to: https://test.ustc.edu.cn/
+  to: https://test.nju.edu.cn/
   ---
   IPv4 & IPv6 测速
   :::
