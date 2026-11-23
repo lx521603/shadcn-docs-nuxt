@@ -46,7 +46,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@iconify-json/lucide": "^1.2.155",
+    "@iconify-json/lucide": "^1.2.158",
     "@iconify-json/vscode-icons": "^1.2.98",
     "@nuxt/fonts": "^1.2.0",
     "@nuxt/icon": "^2.6.2",
@@ -57,7 +57,7 @@
     "@nuxtjs/mdc": "^0.23.2",
     "@tabler/icons-vue": "^3.52.0",
     "@tailwindcss/vite": "^4.3.5",
-    "@takumi-rs/core": "^2.20.0",
+    "@takumi-rs/core": "^2.22.1",
     "@ztl-uwu/nuxt-content": "^2.14.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
