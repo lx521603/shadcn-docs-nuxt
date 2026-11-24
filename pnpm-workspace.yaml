@@ -13,3 +13,10 @@ minimumReleaseAgeExclude:
   - vue-router@5.5.0 || 5.5.1
   - '@eslint/config-array@0.23.6'
   - eslint@10.15.0
+  - '@nuxt/kit@4.7.0'
+  - '@nuxt/nitro-server@4.7.0'
+  - '@nuxt/nitro-v3-server@4.7.0'
+  - '@nuxt/schema@4.7.0'
+  - '@nuxt/vite-builder@4.7.0'
+  - '@nuxt/vite-server@4.7.0'
+  - nuxt@4.7.0
