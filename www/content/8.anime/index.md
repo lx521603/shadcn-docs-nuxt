@@ -121,20 +121,7 @@ icon: lucide:newspaper
   2026 年 11 月 22 日
   ::
 
-  ::card
-  ---
-  img: https://p6-novel.byteimg.com/novel-pic/b0b32aefde714ba1810c699475411861~tplv-shrink:640:0.webp
-  ---
-  #title
-  发配边关：罪妻开荒养出战神
-
-  #description
-  剧情讲述了从末世穿越的苏禾，主动选择嫁给边关将士萧征，并凭借木系异能开荒种田、改善家境的故事。剧集剧情专注于种田经营，减少了传统种田文中的宅斗、家庭纠纷等情节，并压缩了感情线，在有限篇幅内构建了一个以“正反馈”为核心的世界。
-
-
-  #footer
-  2026 年 11 月 15 日
-  ::
+  
 
   ::card
   ---
