@@ -15,7 +15,7 @@ icon: lucide:newspaper
   聚宝仙盆之杂灵根才是真BOSS
 
   #description
-  2026年12月19日，第17季
+  2026年12月19日，第17季<br>
   2026年11月28日，第18季
 
 
@@ -32,7 +32,7 @@ icon: lucide:newspaper
   万妖图录传
 
   #description
-  2026年12月18日，第16季
+  2026年12月18日，第16季<br>
   2026年11月28日，第15季
 
 
